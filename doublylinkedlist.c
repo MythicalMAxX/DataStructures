@@ -139,6 +139,7 @@ int main() {
     insertatend(&head, 10);
     puts("Linked List after inserting 10 at the end: ");
     printList(head);
+    printf("Linked List in reverse: ");
     backwardsprint(head);
     getch();
 }
