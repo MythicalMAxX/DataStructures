@@ -103,6 +103,19 @@ void printList(struct Node* node) {
     printf("\n");
 }
 
+void backwardsprint(struct Node* node) {
+    struct Node* last = NULL;
+    while (node != NULL) {
+        last = node;
+        node = node->next;
+    }
+    while (last != NULL) {
+        printf("%d ", last->data);
+        last = last->prev;
+    }
+    printf("\n");
+}
+
 int main() {
     struct Node* head = NULL;
     insert(&head, 7);
@@ -126,5 +139,6 @@ int main() {
     insertatend(&head, 10);
     puts("Linked List after inserting 10 at the end: ");
     printList(head);
+    backwardsprint(head);
     getch();
 }
