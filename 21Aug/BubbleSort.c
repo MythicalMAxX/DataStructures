@@ -19,7 +19,10 @@ void BubbleSort(int arr[], int n)
 }
 
 void main(){
-    int arr[] = {64, 34, 25, 12, 22, 11, 90};
+    int arr[10];
+    printf("Enter the number of elements: ");
+    for(int i=0; i<10; i++)
+        scanf("%d", &arr[i]);
     int n = sizeof(arr)/sizeof(arr[0]);
     BubbleSort(arr, n);
     printf("Sorted array: \n");
