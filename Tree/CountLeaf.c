@@ -16,25 +16,25 @@ struct Node* createNode(int data) {
     return newNode;
 }
 
-void CountLeaf(struct Node* node, int* count) {
+void CountLeaf(struct Node* node, int* LeafCount) {
     if (node == NULL) {
         return;
     }
     if (node->left == NULL && node->right == NULL) {
-        (*count)++;
+        (*LeafCount)++;
     }
-    CountLeaf(node->left, count);
-    CountLeaf(node->right, count);
+    CountLeaf(node->left, LeafCount);
+    CountLeaf(node->right, LeafCount);
 }
 
 void main() {
     struct Node* root = createNode(1);
-    int count = 0;
+    int LeafCount = 0;
     root->left = createNode(2);
     root->right = createNode(3);
     root->left->left = createNode(4);
     root->left->right = createNode(5);
-    CountLeaf(root, &count); // Pass the address of count
-    printf("\nTotal Leaf Nodes are: %d", count);
+    CountLeaf(root, &LeafCount);
+    printf("\nTotal Leaf Nodes are: %d", LeafCount);
     getch();
 }
